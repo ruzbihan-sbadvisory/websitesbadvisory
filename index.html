@@ -6,6 +6,9 @@
     <title>Strategic Bridge Advisory | Unlocking Opportunities</title>
     <meta name="description" content="Malaysia's strategic advisory partner for cross-border market facilitation, partnerships, and sustainable growth.">
     
+    <!-- -->
+    <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/1nIZoW2CbR2QyIVx0cfLkpOogou-EOOmB">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -181,54 +184,58 @@
             width: 100%;
             z-index: 1000;
             transition: var(--transition);
-            background: transparent;
-            padding: 25px 0;
-        }
-
-        header.scrolled {
+            /* Ditukar dari transparent ke putih solid dengan shadow */
             background: var(--white);
             box-shadow: 0 5px 20px rgba(0,0,0,0.05);
             padding: 15px 0;
         }
 
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        /* Tidak lagi memerlukan .scrolled style untuk padding kerana ia sentiasa putih */
+        header.scrolled {
+            padding: 15px 0;
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             font-family: var(--font-heading);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 800;
-            color: var(--white);
+            /* Ditukar warna dari putih ke primary (biru gelap) untuk contrast atas background putih */
+            color: var(--primary);
             letter-spacing: 1px;
             line-height: 1.1;
         }
+
+        .logo img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+            transition: var(--transition);
+        }
+
+        header.scrolled .logo img {
+            height: 40px;
+        }
+
         .logo span {
             color: var(--secondary);
             display: block;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
             letter-spacing: 2px;
         }
 
-        header.scrolled .logo { color: var(--primary); }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-
+        /* Ditukar warna pautan navigasi dari putih ke biru gelap (primary) */
         .nav-links a {
             font-size: 0.9rem;
             font-weight: 600;
-            color: var(--white);
+            color: var(--primary);
             position: relative;
         }
-        header.scrolled .nav-links a {
-            color: var(--primary);
-        }
+        
+        /* Dibuang gaya spesifik untuk scrolled state pada nav link kerana ia kekal */
 
         .nav-links a::after {
             content: '';
@@ -254,13 +261,13 @@
             z-index: 1001;
         }
 
+        /* Ditukar warna menu toggle (hamburger) ke biru gelap */
         .menu-toggle span {
             width: 25px;
             height: 3px;
-            background-color: var(--white);
+            background-color: var(--primary);
             transition: var(--transition);
         }
-        header.scrolled .menu-toggle span { background-color: var(--primary); }
 
         @media (max-width: 992px) {
             .nav-links {
@@ -281,7 +288,8 @@
             .nav-links.active {
                 right: 0;
             }
-            .nav-links a { color: var(--white) !important; font-size: 1.2rem; }
+            /* Warna pautan didalam menu mobile perlu kekal putih */
+            .nav-links a { color: var(--white); font-size: 1.2rem; }
             .menu-toggle { display: flex; }
             .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); background-color: var(--white); }
             .menu-toggle.active span:nth-child(2) { opacity: 0; }
@@ -1158,8 +1166,11 @@
     <header id="header">
         <div class="container nav-container">
             <a href="#" class="logo">
-                STRATEGIC BRIDGE ADVISORY
-                <span>SDN BHD</span>
+                <img src="https://lh3.googleusercontent.com/d/1nIZoW2CbR2QyIVx0cfLkpOogou-EOOmB" alt="Strategic Bridge Advisory Logo">
+                <div>
+                    STRATEGIC BRIDGE ADVISORY
+                    <span>SDN BHD</span>
+                </div>
             </a>
             
             <div class="menu-toggle" id="mobile-menu">
@@ -1656,8 +1667,11 @@
             <div class="footer-grid">
                 <div>
                     <a href="#" class="logo footer-logo">
-                        STRATEGIC BRIDGE ADVISORY
-                        <span>SDN BHD</span>
+                        <img src="https://lh3.googleusercontent.com/d/1nIZoW2CbR2QyIVx0cfLkpOogou-EOOmB" alt="Strategic Bridge Advisory Logo">
+                        <div>
+                            STRATEGIC BRIDGE ADVISORY
+                            <span>SDN BHD</span>
+                        </div>
                     </a>
                     <p class="footer-about">Malaysia's strategic advisory partner for cross-border market facilitation, partnerships, and sustainable growth.</p>
                 </div>
