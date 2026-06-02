@@ -1,0 +1,1828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Bridge Advisory | Unlocking Opportunities</title>
+    <meta name="description" content="Malaysia's strategic advisory partner for cross-border market facilitation, partnerships, and sustainable growth.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           CSS Variables & Base Reset
+           ========================================================================== */
+        :root {
+            --primary: #1B2A5E; /* Deep Navy Blue */
+            --secondary: #C9A84C; /* Gold/Amber */
+            --secondary-hover: #b5953e;
+            --white: #FFFFFF;
+            --light-gray: #F5F5F5;
+            --text-dark: #222222;
+            --text-light: #555555;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 10px 30px rgba(27, 42, 94, 0.08);
+            --shadow-hover: 0 15px 40px rgba(27, 42, 94, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-light);
+            line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            color: var(--primary);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img, svg {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 15px;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .section-title.center {
+            text-align: center;
+        }
+        .section-title.center::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 700px;
+        }
+        .section-subtitle.center {
+            margin: 0 auto 3rem auto;
+            text-align: center;
+        }
+
+        .bg-light { background-color: var(--light-gray); }
+        .bg-dark { background-color: var(--primary); color: var(--white); }
+        .bg-dark h1, .bg-dark h2, .bg-dark h3, .bg-dark .section-title { color: var(--white); }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: var(--secondary);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border-color: var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ==========================================================================
+           Navigation
+           ========================================================================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+            background: transparent;
+            padding: 25px 0;
+        }
+
+        header.scrolled {
+            background: var(--white);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: 1px;
+            line-height: 1.1;
+        }
+        .logo span {
+            color: var(--secondary);
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        header.scrolled .logo { color: var(--primary); }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--white);
+            position: relative;
+        }
+        header.scrolled .nav-links a {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--white);
+            transition: var(--transition);
+        }
+        header.scrolled .menu-toggle span { background-color: var(--primary); }
+
+        @media (max-width: 992px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 400px;
+                height: 100vh;
+                background-color: var(--primary);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                transition: var(--transition);
+                box-shadow: -5px 0 30px rgba(0,0,0,0.1);
+            }
+            .nav-links.active {
+                right: 0;
+            }
+            .nav-links a { color: var(--white) !important; font-size: 1.2rem; }
+            .menu-toggle { display: flex; }
+            .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); background-color: var(--white); }
+            .menu-toggle.active span:nth-child(2) { opacity: 0; }
+            .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); background-color: var(--white); }
+        }
+
+        /* ==========================================================================
+           Hero Section
+           ========================================================================== */
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(18, 28, 61, 0.92) 0%, rgba(27, 42, 94, 0.85) 100%),
+                        url('https://images.unsplash.com/photo-1502899576159-f224dc2349fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            color: var(--white);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            color: var(--secondary);
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            color: #d1d5e6;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+        .scroll-down svg { width: 30px; height: 30px; fill: var(--white); opacity: 0.7; }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-15px) translateX(-50%); }
+            60% { transform: translateY(-7px) translateX(-50%); }
+        }
+
+        /* ==========================================================================
+           About Us
+           ========================================================================== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .about-visual {
+            position: relative;
+            height: 100%;
+            min-height: 400px;
+        }
+
+        .shape-main {
+            position: absolute;
+            top: 10%;
+            right: 10%;
+            width: 80%;
+            height: 80%;
+            background-color: var(--primary);
+            background-image: url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+            border-radius: 4px;
+            z-index: 2;
+            box-shadow: var(--shadow);
+        }
+        .shape-accent {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60%;
+            height: 60%;
+            border: 4px solid var(--secondary);
+            border-radius: 4px;
+            z-index: 1;
+        }
+        .shape-dots {
+            position: absolute;
+            top: 0;
+            left: 10%;
+            width: 150px;
+            height: 150px;
+            background-image: radial-gradient(var(--secondary) 2px, transparent 2px);
+            background-size: 15px 15px;
+            z-index: 3;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+            padding-top: 4rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+        .stat-number {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .stat-label {
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .about-visual { min-height: 300px; order: -1; }
+            .stats-container { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
+        /* ==========================================================================
+           Mission & Vision
+           ========================================================================== */
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        .mv-box h3 {
+            color: var(--secondary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .mv-box h3 svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--secondary);
+        }
+        .mv-box p {
+            color: #d1d5e6;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        .mv-list li {
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 15px;
+            color: #d1d5e6;
+        }
+        .mv-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .mv-grid { grid-template-columns: 1fr; gap: 3rem; }
+        }
+
+        /* ==========================================================================
+           Our Philosophy
+           ========================================================================== */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .phil-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 4px;
+            border-top: 4px solid var(--secondary);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        .phil-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        .phil-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(27, 42, 94, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        .phil-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .cards-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ==========================================================================
+           Our Team
+           ========================================================================== */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+        .team-card {
+            text-align: center;
+        }
+        .team-avatar {
+            width: 150px;
+            height: 150px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 700;
+            box-shadow: var(--shadow);
+            border: 4px solid var(--white);
+            outline: 2px solid var(--secondary);
+            outline-offset: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+        .team-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+        .team-avatar span {
+            position: relative;
+            z-index: 1;
+        }
+        .team-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+        .team-title {
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        .team-divider {
+            width: 40px;
+            height: 2px;
+            background: var(--secondary);
+            margin: 0 auto 1rem auto;
+        }
+        .team-bio {
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .team-grid { grid-template-columns: 1fr; gap: 3rem; }
+        }
+
+        /* ==========================================================================
+           Services
+           ========================================================================== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        .service-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 4px;
+            border: 1px solid #eaeaea;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+        .service-card:hover {
+            box-shadow: var(--shadow-hover);
+            border-color: transparent;
+        }
+        .service-card:hover::before {
+            height: 100%;
+        }
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1.5rem;
+            fill: var(--primary);
+            transition: var(--transition);
+        }
+        .service-card:hover .service-icon {
+            fill: var(--secondary);
+            transform: scale(1.1);
+        }
+        .service-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .services-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ==========================================================================
+           Industries
+           ========================================================================== */
+        .industry-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        .industry-card {
+            background: rgba(255,255,255,0.05);
+            padding: 2.5rem;
+            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: var(--transition);
+        }
+        .industry-card:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--secondary);
+        }
+        .industry-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 1.5rem;
+            fill: var(--secondary);
+        }
+        .industry-card h4 {
+            color: var(--white);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        .industry-card p {
+            color: #b0b5cc;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .industry-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ==========================================================================
+           Track Record
+           ========================================================================== */
+        .track-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+        .track-stat-box {
+            background: var(--primary);
+            color: var(--white);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border-radius: 4px;
+            border-bottom: 4px solid var(--secondary);
+            box-shadow: var(--shadow);
+        }
+        .track-stat-box .num {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        .track-stat-box .label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .states-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            align-items: start;
+        }
+        .state-card {
+            background: var(--white);
+            border: 1px solid #eaeaea;
+            border-radius: 4px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            transition: var(--transition);
+        }
+        .state-card:hover {
+            box-shadow: var(--shadow-hover);
+        }
+        .state-card h5 {
+            font-size: 1.2rem;
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        .project-list {
+            list-style: none;
+        }
+        .project-list li {
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            line-height: 1.4;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+        .dot.solar { background: #FCD34D; } /* Yellow */
+        .dot.hydro { background: #3B82F6; } /* Blue */
+        .dot.biogas { background: #10B981; } /* Green */
+        .dot.bess { background: #EF4444; } /* Red */
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eaeaea;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* ==========================================================================
+           Interactive Background Hover Cards
+           ========================================================================== */
+        .bg-hover-card {
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .bg-hover-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: linear-gradient(rgba(27, 42, 94, 0.85), rgba(27, 42, 94, 0.95)), var(--bg-image);
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            z-index: -1;
+            transform: scale(1.1);
+            border-radius: inherit;
+        }
+
+        .bg-hover-card:hover::after,
+        .bg-hover-card:active::after {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .bg-hover-card > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .bg-hover-card h4, 
+        .bg-hover-card h5, 
+        .bg-hover-card p, 
+        .bg-hover-card li {
+            transition: color 0.4s ease, border-color 0.4s ease;
+        }
+
+        .bg-hover-card:hover h4, 
+        .bg-hover-card:hover h5, 
+        .bg-hover-card:hover p, 
+        .bg-hover-card:hover li {
+            color: var(--white) !important;
+        }
+        
+        .bg-hover-card:hover .service-icon,
+        .bg-hover-card:hover .industry-icon {
+            fill: var(--secondary) !important;
+        }
+
+        .state-card.bg-hover-card:hover h5 {
+            border-bottom-color: rgba(255,255,255,0.2);
+        }
+
+        @media (max-width: 992px) {
+            .track-stats { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 576px) {
+            .track-stats { grid-template-columns: 1fr; }
+        }
+
+        /* ==========================================================================
+           Milestones (Timeline)
+           ========================================================================== */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        
+        /* The central line */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #e0e0e0;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 2px;
+        }
+        .timeline-line-fill {
+            position: absolute;
+            width: 4px;
+            background-color: var(--secondary);
+            top: 0;
+            left: 50%;
+            margin-left: -2px;
+            height: 0%; /* Animated via JS */
+            z-index: 1;
+            transition: height 1.5s ease-out;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        .timeline-item.left { left: 0; }
+        .timeline-item.right { left: 50%; }
+
+        /* The circles on the timeline */
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background-color: var(--white);
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            right: -12px;
+            top: 15px;
+            z-index: 2;
+        }
+        .timeline-item.right::after { left: -12px; }
+
+        /* Different dot colors */
+        .timeline-item:nth-child(2)::after { border-color: var(--secondary); }
+        .timeline-item:nth-child(3)::after { border-color: #10B981; } /* Dark Green */
+
+        .timeline-content {
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 4px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        .timeline-content h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .timeline-content .year {
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        .timeline-content ul {
+            list-style: none;
+        }
+        .timeline-content ul li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+        .timeline-content ul li::before {
+            content: "•";
+            color: var(--secondary);
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+            top: -2px;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::after, .timeline-line-fill { left: 31px; }
+            .timeline-item { width: 100%; padding-left: 70px; padding-right: 0; }
+            .timeline-item.right { left: 0; }
+            .timeline-item::after, .timeline-item.right::after { left: 19px; }
+        }
+
+        /* ==========================================================================
+           Contact Us
+           ========================================================================== */
+        .contact-wrap {
+            display: flex;
+            box-shadow: var(--shadow);
+            border-radius: 4px;
+            overflow: hidden;
+            background: var(--white);
+        }
+        .contact-info {
+            flex: 1;
+            background: var(--primary);
+            color: var(--white);
+            padding: 4rem;
+        }
+        .contact-info h3 {
+            color: var(--white);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .contact-info p {
+            color: #b0b5cc;
+            margin-bottom: 3rem;
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+        }
+        .info-item svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--secondary);
+        }
+        .info-item span {
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+
+        .contact-form {
+            flex: 1.2;
+            padding: 4rem;
+            background: var(--white);
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+        .form-control {
+            width: 100%;
+            padding: 14px 15px;
+            border: 1px solid #dcdcdc;
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--text-dark);
+            background: var(--white);
+            transition: var(--transition);
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
+        }
+        textarea.form-control {
+            height: 120px;
+            resize: vertical;
+        }
+        .btn-submit {
+            width: 100%;
+            font-size: 1.1rem;
+            padding: 16px;
+        }
+
+        @media (max-width: 992px) {
+            .contact-wrap { flex-direction: column; }
+            .contact-info, .contact-form { padding: 3rem 2rem; }
+            .form-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ==========================================================================
+           Footer
+           ========================================================================== */
+        footer {
+            background: #121C3D;
+            color: #d1d5e6;
+            padding: 4rem 0 0 0;
+            border-top: 4px solid var(--secondary);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        .footer-logo {
+            margin-bottom: 1rem;
+        }
+        .footer-logo span {
+            color: var(--secondary);
+        }
+        .footer-about {
+            max-width: 300px;
+            font-size: 0.95rem;
+        }
+        .footer-title {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            font-family: var(--font-heading);
+        }
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .footer-links a {
+            font-size: 0.95rem;
+        }
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        .footer-bottom {
+            background: #0a1128;
+            padding: 1.5rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #8c93ab;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
+        /* Scroll to Top */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--secondary);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        .scroll-to-top:hover {
+            background: var(--secondary-hover);
+            transform: translateY(-3px);
+        }
+        .scroll-to-top svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--primary);
+            transform: rotate(-90deg);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                STRATEGIC BRIDGE ADVISORY
+                <span>SDN BHD</span>
+            </a>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="#home" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#mission">Mission & Vision</a>
+                <a href="#team">Our Team</a>
+                <a href="#services">Services</a>
+                <a href="#industries">Industries</a>
+                <a href="#track-record">Track Record</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page 1: Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-pattern"></div>
+        <div class="container">
+            <div class="hero-content reveal">
+                <h1>Bridging Businesses.<br><span>Unlocking Opportunities.</span></h1>
+                <p>Malaysia's strategic advisory partner for cross-border market facilitation, partnerships, and sustainable growth.</p>
+                <div class="hero-btns">
+                    <a href="#services" class="btn btn-primary">Explore Our Services</a>
+                    <a href="#contact" class="btn btn-outline">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        <a href="#about" class="scroll-down">
+            <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+        </a>
+    </section>
+
+    <!-- Page 2: About Us -->
+    <section id="about" class="bg-light">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <h2 class="section-title">About Us</h2>
+                    <p>Strategic Bridge Advisory Sdn Bhd is a Malaysia-based business consulting and advisory firm specializing in cross-border market facilitation, strategic networking, and opportunity development.</p>
+                    <p>We act as a strategic intermediary between industries, organizations, and markets — bridging gaps across states and international boundaries. Our core focus lies in identifying high-potential business opportunities, conducting market intelligence, and enabling meaningful partnerships that drive sustainable growth.</p>
+                </div>
+                <div class="about-visual reveal">
+                    <div class="shape-main"></div>
+                    <div class="shape-accent"></div>
+                    <div class="shape-dots"></div>
+                </div>
+            </div>
+
+            <div class="stats-container reveal">
+                <div class="stat-item">
+                    <div class="stat-number"><span class="counter" data-target="1.7">0</span> GW+</div>
+                    <div class="stat-label">Projects Facilitated</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number"><span class="counter" data-target="50">0</span>+</div>
+                    <div class="stat-label">Energy Projects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number"><span class="counter" data-target="3">0</span> States</div>
+                    <div class="stat-label">To Regional Focus</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 3: Mission & Vision -->
+    <section id="mission" class="bg-dark">
+        <div class="container">
+            <div class="mv-grid">
+                <div class="mv-box reveal">
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zm0 3.83L18.17 19H5.83L12 5.83zM11 10h2v5h-2zm0 6h2v2h-2z"/></svg>
+                        Our Mission
+                    </h3>
+                    <ul class="mv-list">
+                        <li>To facilitate strategic connections between industries and markets locally and globally.</li>
+                        <li>To provide actionable business insights through structured market research and analysis.</li>
+                        <li>To identify and develop high-value business opportunities for clients.</li>
+                        <li>To build long-term partnerships grounded in trust, credibility, and performance.</li>
+                    </ul>
+                </div>
+                <div class="mv-box reveal" style="transition-delay: 0.2s;">
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M12 4C7 4 2.73 7.11 1 11.5 2.73 15.89 7 19 12 19s9.27-3.11 11-7.5C21.27 7.11 17 4 12 4zm0 12.5c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                        Our Vision
+                    </h3>
+                    <p>To become a leading regional advisory firm recognized for connecting businesses across borders and unlocking strategic growth opportunities in emerging and established markets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 4: Our Philosophy -->
+    <section class="bg-light">
+        <div class="container">
+            <div class="text-center reveal" style="text-align: center;">
+                <h2 class="section-title center">Our Philosophy</h2>
+                <p class="section-subtitle center">At Strategic Bridge Advisory, we believe opportunities are created through connections, not coincidence.</p>
+            </div>
+            
+            <div class="cards-grid">
+                <div class="phil-card reveal">
+                    <div class="phil-icon">🔗</div>
+                    <h4>Bridge the Gap</h4>
+                    <p>We connect businesses, ideas, and markets that would otherwise remain disconnected.</p>
+                </div>
+                <div class="phil-card reveal" style="transition-delay: 0.15s;">
+                    <div class="phil-icon">⭐</div>
+                    <h4>Value Over Volume</h4>
+                    <p>We prioritize high-impact opportunities rather than transactional engagements.</p>
+                </div>
+                <div class="phil-card reveal" style="transition-delay: 0.3s;">
+                    <div class="phil-icon">💡</div>
+                    <h4>Insight-Driven Decisions</h4>
+                    <p>Every recommendation is backed by structured analysis and real market understanding.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 5: Our Team -->
+    <section id="team">
+        <div class="container">
+            <div class="text-center reveal" style="text-align: center;">
+                <h2 class="section-title center">Meet Our Team</h2>
+                <p class="section-subtitle center">Led by industry experts committed to driving strategic growth.</p>
+            </div>
+
+            <div class="team-grid">
+                <!-- Director 1 -->
+                <div class="team-card reveal">
+                    <div class="team-avatar">
+                        <span>DB</span>
+                        <img src="https://lh3.googleusercontent.com/d/1ukPCYDS7jj4LV2vg-eAQcdy3HyogixDo" alt="Dr. Badzli Bakar" onerror="this.style.display='none'">
+                    </div>
+                    <h4>Dr. Badzli Bakar</h4>
+                    <div class="team-title">Director</div>
+                    <div class="team-divider"></div>
+                    <p class="team-bio">A seasoned professional in biomedical engineering and healthcare infrastructure development, with extensive experience across Southeast Asia. Led strategic business development and marketing initiatives, including large-scale government and hospital projects with advanced medical imaging systems.</p>
+                </div>
+                
+                <!-- Director 2 -->
+                <div class="team-card reveal" style="transition-delay: 0.15s;">
+                    <div class="team-avatar">
+                        <span>SU</span>
+                        <img src="https://lh3.googleusercontent.com/d/1GwgleK4WrX0Fghs50G-DovOUZ5kHLC2Q" alt="Safuan Ujar" onerror="this.style.display='none'">
+                    </div>
+                    <h4>Safuan Ujar</h4>
+                    <div class="team-title">Director</div>
+                    <div class="team-divider"></div>
+                    <p class="team-bio">A finance and quality-driven executive with over a decade of experience in testing, compliance, and corporate operations. Strong expertise in accounting, auditing, and business management across construction, services, and non-profit sectors.</p>
+                </div>
+
+                <!-- Director 3 -->
+                <div class="team-card reveal" style="transition-delay: 0.3s;">
+                    <div class="team-avatar">
+                        <span>MK</span>
+                        <img src="https://lh3.googleusercontent.com/d/1MH78K6fIPm6XXWKupALigcefW-NYKU2j" alt="MK Nizam" onerror="this.style.display='none'">
+                    </div>
+                    <h4>MK Nizam</h4>
+                    <div class="team-title">Director</div>
+                    <div class="team-divider"></div>
+                    <p class="team-bio">A technical-commercial leader with deep expertise in power systems, utilities, and renewable energy infrastructure. Successfully driven growth and operational excellence of multiple energy projects across Malaysia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 6: Services -->
+    <section id="services" class="bg-light">
+        <div class="container">
+            <div class="text-center reveal" style="text-align: center;">
+                <h2 class="section-title center">Our Services</h2>
+                <p class="section-subtitle center">Strategic advisory solutions tailored for cross-border growth.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card reveal bg-hover-card" style="--bg-image: url('https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=600&q=80');">
+                    <svg class="service-icon" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg>
+                    <h4>Cross-Border Market Facilitation</h4>
+                    <p>We bridge gaps between local and international markets, opening doors to new business territories and expanding your operational footprint securely.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card reveal bg-hover-card" style="transition-delay: 0.1s; --bg-image: url('https://images.unsplash.com/photo-1515169067868-5387ec356754?auto=format&fit=crop&w=600&q=80');">
+                    <svg class="service-icon" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                    <h4>Strategic Networking</h4>
+                    <p>Leveraging our relationship capital to connect you with the right stakeholders, partners, and decision-makers for mutually beneficial alignments.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card reveal bg-hover-card" style="transition-delay: 0.2s; --bg-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80');">
+                    <svg class="service-icon" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+                    <h4>Market Intelligence & Research</h4>
+                    <p>Structured market analysis, competitive landscape assessments, and business insights to support informed, high-impact decisions.</p>
+                </div>
+                <!-- Service 4 -->
+                <div class="service-card reveal bg-hover-card" style="transition-delay: 0.3s; --bg-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80');">
+                    <svg class="service-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                    <h4>Opportunity Development</h4>
+                    <p>Identifying and developing high-value business opportunities that are perfectly aligned with your long-term growth and expansion strategies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 7: Industries We Serve -->
+    <section id="industries" class="bg-dark">
+        <div class="container">
+            <div class="text-center reveal" style="text-align: center;">
+                <h2 class="section-title center">Industries We Serve</h2>
+                <p class="section-subtitle center">Our expertise spans across critical sectors, enabling us to facilitate cross-industry growth and robust strategic partnerships.</p>
+            </div>
+
+            <div class="industry-grid">
+                <!-- Industry 1 -->
+                <div class="industry-card reveal bg-hover-card" style="--bg-image: url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=600&q=80');">
+                    <!-- Energy SVG -->
+                    <svg class="industry-icon" viewBox="0 0 24 24"><path d="M16.04 11H12V3l-7 11h4v8l7-11z"/></svg>
+                    <h4>Energy & Renewable</h4>
+                    <p>Supporting conventional and renewable energy initiatives through strategic advisory, project facilitation, and market expansion across regional and international landscapes.</p>
+                </div>
+                <!-- Industry 2 -->
+                <div class="industry-card reveal bg-hover-card" style="transition-delay: 0.1s; --bg-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80');">
+                    <!-- Tech SVG -->
+                    <svg class="industry-icon" viewBox="0 0 24 24"><path d="M21 11V9h-2V7c0-1.1-.9-2-2-2h-2V3h-2v2h-2V3H9v2H7c-1.1 0-2 .9-2 2v2H3v2h2v2H3v2h2v2c0 1.1.9 2 2 2h2v2h2v-2h2v2h2v-2h2c1.1 0 2-.9 2-2v-2h2v-2h-2v-2h2zm-4 6H7V7h10v10zM9 9h6v6H9z"/></svg>
+                    <h4>Technology</h4>
+                    <p>Enabling technology-driven businesses to scale through targeted market entry strategies, strategic partnerships, and innovation-focused advisory.</p>
+                </div>
+                <!-- Industry 3 -->
+                <div class="industry-card reveal bg-hover-card" style="transition-delay: 0.2s; --bg-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80');">
+                    <!-- Manufacturing SVG -->
+                    <svg class="industry-icon" viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+                    <h4>Manufacturing</h4>
+                    <p>Assisting manufacturers in optimizing market positioning, expanding supply chain networks, and exploring new growth opportunities across borders.</p>
+                </div>
+                <!-- Industry 4 -->
+                <div class="industry-card reveal bg-hover-card" style="transition-delay: 0.3s; --bg-image: url('https://images.unsplash.com/photo-1541888086425-d81bb192a0e0?auto=format&fit=crop&w=600&q=80');">
+                    <!-- Infrastructure SVG -->
+                    <svg class="industry-icon" viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zm0 3.83L18.17 19H5.83L12 5.83zM11 10h2v5h-2zm0 6h2v2h-2z"/></svg>
+                    <h4>Infrastructure</h4>
+                    <p>Facilitating infrastructure development initiatives by connecting critical stakeholders, identifying opportunities, and supporting project-driven collaborations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 8: Track Record -->
+    <section id="track-record">
+        <div class="container">
+            <div class="text-center reveal" style="text-align: center;">
+                <h2 class="section-title center">Experience & Track Record</h2>
+                <p class="section-subtitle center">We bring proven experience and a strong track record of success, particularly in the renewable energy sector across Malaysia.</p>
+            </div>
+
+            <!-- Global Stats -->
+            <div class="track-stats reveal">
+                <div class="track-stat-box">
+                    <div class="num">1.7 GW</div>
+                    <div class="label">Large Scale Solar</div>
+                </div>
+                <div class="track-stat-box">
+                    <div class="num">52 MW</div>
+                    <div class="label">Hydro Power</div>
+                </div>
+                <div class="track-stat-box">
+                    <div class="num">8.5 MW</div>
+                    <div class="label">Biogas</div>
+                </div>
+                <div class="track-stat-box">
+                    <div class="num">110 MW</div>
+                    <div class="label">BESS Capacity</div>
+                </div>
+            </div>
+
+            <!-- Projects by State Grid -->
+            <div class="states-grid reveal">
+                <!-- Perlis -->
+                <div class="state-card bg-hover-card" style="--bg-image: url('https://images.unsplash.com/photo-1509391366360-1e97fb52a1ba?auto=format&fit=crop&w=600&q=80');">
+                    <h5>Perlis</h5>
+                    <ul class="project-list">
+                        <li><span class="dot solar"></span> LSS Project (50 MW)</li>
+                        <li><span class="dot solar"></span> Commercial Solar (10 MW)</li>
+                    </ul>
+                </div>
+                <!-- Kedah -->
+                <div class="state-card bg-hover-card" style="--bg-image: url('https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&w=600&q=80');">
+                    <h5>Kedah</h5>
+                    <ul class="project-list">
+                        <li><span class="dot solar"></span> LSS Development (100 MW)</li>
+                        <li><span class="dot bess"></span> BESS Integration (30 MW)</li>
+                        <li><span class="dot solar"></span> Rooftop C&I (15 MW)</li>
+                    </ul>
+                </div>
+                <!-- Pulau Pinang -->
+                <div class="state-card bg-hover-card" style="--bg-image: url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=600&q=80');">
+                    <h5>Pulau Pinang</h5>
+                    <ul class="project-list">
+                        <li><span class="dot solar"></span> Solar C&I Port Project (25 MW)</li>
+                    </ul>
+                </div>
+                <!-- Perak -->
+                <div class="state-card bg-hover-card" style="--bg-image: url('https://images.unsplash.com/photo-1519826135893-68d1cd5e1db8?auto=format&fit=crop&w=600&q=80');">
+                    <h5>Perak</h5>
+                    <ul class="project-list">
+                        <li><span class="dot hydro"></span> Small Hydro Power (20 MW)</li>
+                        <li><span class="dot solar"></span> Ground Mounted Solar (40 MW)</li>
+                    </ul>
+                </div>
+                <!-- Selangor -->
+                <div class="state-card bg-hover-card" style="--bg-image: url('https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?auto=format&fit=crop&w=600&q=80');">
+                    <h5>Selangor</h5>
+                    <ul class="project-list">
+                        <li><span class="dot biogas"></span> Biogas Plant (5 MW)</li>
+                        <li><span class="dot solar"></span> Factory Rooftop Solar (35 MW)</li>
+                        <li><span class="dot bess"></span> BESS Facility (40 MW)</li>
+                    </ul>
+                </div>
+                <!-- Melaka -->
+                <div class="state-card bg-hover-card" style="--bg-image: url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=600&q=80');">
+                    <h5>Melaka</h5>
+                    <ul class="project-list">
+                        <li><span class="dot solar"></span> LSS Installation (50 MW)</li>
+                    </ul>
+                </div>
+                <!-- Johor -->
+                <div class="state-card bg-hover-card" style="--bg-image: url('https://images.unsplash.com/photo-1587313886503-ff5df0271d4d?auto=format&fit=crop&w=600&q=80');">
+                    <h5>Johor</h5>
+                    <ul class="project-list">
+                        <li><span class="dot solar"></span> Mega Solar Farm (200 MW)</li>
+                        <li><span class="dot bess"></span> Storage Expansion (40 MW)</li>
+                    </ul>
+                </div>
+                <!-- Kelantan -->
+                <div class="state-card bg-hover-card" style="--bg-image: url('https://images.unsplash.com/photo-1473445763915-df6a495ff2af?auto=format&fit=crop&w=600&q=80');">
+                    <h5>Kelantan</h5>
+                    <ul class="project-list">
+                        <li><span class="dot hydro"></span> River Hydro Project (15 MW)</li>
+                    </ul>
+                </div>
+                <!-- Terengganu -->
+                <div class="state-card bg-hover-card" style="--bg-image: url('https://images.unsplash.com/photo-1533282960533-51328aa2660d?auto=format&fit=crop&w=600&q=80');">
+                    <h5>Terengganu</h5>
+                    <ul class="project-list">
+                        <li><span class="dot solar"></span> Floating Solar (30 MW)</li>
+                        <li><span class="dot hydro"></span> Mini Hydro (5 MW)</li>
+                    </ul>
+                </div>
+                <!-- Pahang -->
+                <div class="state-card bg-hover-card" style="--bg-image: url('https://images.unsplash.com/photo-1620885149377-a16706e23ca3?auto=format&fit=crop&w=600&q=80');">
+                    <h5>Pahang</h5>
+                    <ul class="project-list">
+                        <li><span class="dot hydro"></span> Hydro Generation (12 MW)</li>
+                        <li><span class="dot biogas"></span> Palm Oil Biogas (3.5 MW)</li>
+                    </ul>
+                </div>
+                <!-- Sabah -->
+                <div class="state-card bg-hover-card" style="--bg-image: url('https://images.unsplash.com/photo-1548613052-dcde5a06cefc?auto=format&fit=crop&w=600&q=80');">
+                    <h5>Sabah</h5>
+                    <ul class="project-list">
+                        <li><span class="dot solar"></span> East Coast Solar (100 MW)</li>
+                        <li><span class="dot hydro"></span> Inland Hydro Project (10 MW)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Legend -->
+            <div class="legend reveal">
+                <div class="legend-item"><span class="dot solar"></span> Solar Power Plant</div>
+                <div class="legend-item"><span class="dot hydro"></span> Hydro Power Plant</div>
+                <div class="legend-item"><span class="dot biogas"></span> Biogas Power Plant</div>
+                <div class="legend-item"><span class="dot bess"></span> Battery Energy Storage (BESS)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 9: Company Milestones -->
+    <section class="bg-light">
+        <div class="container">
+            <div class="text-center reveal" style="text-align: center;">
+                <h2 class="section-title center">Company Milestones</h2>
+                <p class="section-subtitle center">Our strategic journey towards becoming a leading regional advisory partner.</p>
+            </div>
+
+            <div class="timeline reveal" id="timeline">
+                <div class="timeline-line-fill" id="timeline-fill"></div>
+                <!-- Year 1 -->
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="year">Phase 1</span>
+                        <h4>The Launch</h4>
+                        <ul>
+                            <li>Establish core networking infrastructure across Malaysia.</li>
+                            <li>Secure initial portfolio of 5–10 advisory clients.</li>
+                            <li>Conduct foundational market studies and intelligence.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Year 2 -->
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <span class="year">Phase 2</span>
+                        <h4>Key Achievements</h4>
+                        <ul>
+                            <li>Expand advisory network to broader ASEAN markets.</li>
+                            <li>Facilitate high-value cross-border collaborations.</li>
+                            <li>Build permanent strategic partnerships with industry leaders.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Year 3 -->
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="year">Phase 3</span>
+                        <h4>Growth Stage</h4>
+                        <ul>
+                            <li>Recognized natively as a premier regional advisory connector.</li>
+                            <li>Handle complex, multi-country energy and tech projects.</li>
+                            <li>Develop proprietary market intelligence and framework models.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 10: Contact Us -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-wrap reveal">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>Ready to explore a strategic opportunity? Reach out and let us bridge the gap for you.</p>
+                    
+                    <div class="info-item">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <span>info@sbadvisory.com</span>
+                    </div>
+                    <div class="info-item">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        <span>+60 3-XXXX XXXX</span>
+                    </div>
+                    <div class="info-item">
+                        <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg>
+                        <span>www.sbadvisory.com</span>
+                    </div>
+                </div>
+
+                <form class="contact-form" onsubmit="event.preventDefault();">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Full Name*" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Company Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email Address*" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" placeholder="Phone Number">
+                        </div>
+                        <div class="form-group full">
+                            <select class="form-control" required>
+                                <option value="" disabled selected>Select Industry of Interest*</option>
+                                <option value="energy">Energy & Renewable</option>
+                                <option value="tech">Technology</option>
+                                <option value="manufacturing">Manufacturing</option>
+                                <option value="infrastructure">Infrastructure</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group full">
+                            <textarea class="form-control" placeholder="How can we help you?*" required></textarea>
+                        </div>
+                        <div class="form-group full">
+                            <button type="submit" class="btn btn-primary btn-submit">Send Message</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="#" class="logo footer-logo">
+                        STRATEGIC BRIDGE ADVISORY
+                        <span>SDN BHD</span>
+                    </a>
+                    <p class="footer-about">Malaysia's strategic advisory partner for cross-border market facilitation, partnerships, and sustainable growth.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#about">About Us</a>
+                        <a href="#services">Services</a>
+                        <a href="#industries">Industries We Serve</a>
+                        <a href="#track-record">Track Record</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-title">Connect</h4>
+                    <div class="footer-links">
+                        <a href="#contact">Contact Us</a>
+                        <a href="#">LinkedIn Profile</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Strategic Bridge Advisory Sdn Bhd. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-to-top" id="scrollTopBtn">
+        <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Mobile Menu Toggle
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.getElementById('nav-links');
+            
+            mobileMenu.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+
+            // Close mobile menu on link click
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                });
+            });
+
+            // 2. Sticky Header & Scroll to Top
+            const header = document.getElementById('header');
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+
+                if (window.scrollY > 500) {
+                    scrollTopBtn.classList.add('visible');
+                } else {
+                    scrollTopBtn.classList.remove('visible');
+                }
+            });
+
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // 3. Scroll Reveal Animations (Intersection Observer)
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        
+                        // Trigger counters if they exist in this element
+                        const counters = entry.target.querySelectorAll('.counter');
+                        if (counters.length > 0) {
+                            runCounters(counters);
+                        }
+                        
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                root: null,
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // 4. Number Counters Animation
+            function runCounters(counters) {
+                counters.forEach(counter => {
+                    counter.innerText = '0';
+                    const target = parseFloat(counter.getAttribute('data-target'));
+                    // Check if integer or float
+                    const isFloat = target % 1 !== 0;
+                    
+                    const updateCounter = () => {
+                        const count = parseFloat(counter.innerText);
+                        const increment = target / 50; // Speed adjustment
+                        
+                        if (count < target) {
+                            let nextVal = count + increment;
+                            if (nextVal > target) nextVal = target;
+                            
+                            counter.innerText = isFloat ? nextVal.toFixed(1) : Math.ceil(nextVal);
+                            setTimeout(updateCounter, 30);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    updateCounter();
+                });
+            }
+
+            // 5. Timeline Scroll Animation
+            const timeline = document.getElementById('timeline');
+            const timelineFill = document.getElementById('timeline-fill');
+            
+            if(timeline) {
+                const timelineObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if(entry.isIntersecting) {
+                            timelineFill.style.height = '100%';
+                        }
+                    });
+                }, { threshold: 0.2 });
+                timelineObserver.observe(timeline);
+            }
+
+            // 6. Active Nav Link on Scroll
+            const sections = document.querySelectorAll('section');
+            const navItems = document.querySelectorAll('.nav-links a');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= (sectionTop - 150)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navItems.forEach(a => {
+                    a.classList.remove('active');
+                    if (a.getAttribute('href').includes(current) && current !== '') {
+                        a.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
